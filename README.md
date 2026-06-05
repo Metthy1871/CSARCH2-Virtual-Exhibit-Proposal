@@ -22,7 +22,7 @@
 | Technology | Role |
 |---|---|
 | Astro 6 | Primary framework; required by the project template; handles museum page rendering |
-| React (JSX) | All interactive exhibit elements — simulations and educational games as reusable JSX components embedded via MDX |
+| React (JSX) | All interactive exhibit elements - simulations and educational games as reusable JSX components embedded via MDX |
 | MDX | Main exhibit content page; combines written content with embedded React components |
 | CSS | Styling; used to replicate the visual aesthetic of late-1990s computing environments |
 
