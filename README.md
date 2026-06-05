@@ -120,7 +120,7 @@ Group’s tech stack plan:
 
 ## III. Proposed Design Layout
 
-  ### PC Display
+  ### 1. PC Display
   
   
   
@@ -138,6 +138,6 @@ Group’s tech stack plan:
   
   
   
-  ### Mobile Display
+  ### 2. Mobile Display
 
 
