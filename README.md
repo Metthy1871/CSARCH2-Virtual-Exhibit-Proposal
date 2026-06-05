@@ -24,7 +24,7 @@
 | MDX | Main exhibit content page; combines written content with embedded React components |
 | CSS | Styling; used to replicate the visual aesthetic of late-1990s computing environments |
 
-#### Astro 6
+#### 1. Astro 6
 
 Astro will serve as the primary framework for our virtual exhibit. It is the required framework for the project template and will be responsible for rendering the museum page.
 
@@ -32,7 +32,7 @@ Astro will serve as the primary framework for our virtual exhibit. It is the req
 - Easy integration of React components
 - Compatible with the central museum website architecture
 
-#### React (JSX)
+#### 2. React (JSX)
 
 React will be used to develop all the interactive exhibit elements. The project's simulations and educational games will be implemented as reusable JSX components, displayed in the MDX file. In addition, most of us have experience with using React JSX.
 
@@ -41,7 +41,7 @@ React will be used to develop all the interactive exhibit elements. The project'
 - Midnight Crisis Fix-It Game Component (Interactive Game)
 - Interactive Timeline Component (Interactive Timeline)
 
-#### MDX
+#### 3. MDX
 
 MDX will be used to create the main exhibit content page. It combines the introduction and technical explanations with embedded React components for interactive demonstrations.
 
@@ -49,7 +49,7 @@ MDX will be used to create the main exhibit content page. It combines the introd
 - Easy content and component placement manipulation
 - Integration between text and interactive elements
 
-#### CSS
+#### 4. CSS
 
 Traditional CSS will be used to replicate the visual style of late-1990s computing environments. In addition, most of us have experience with using traditional CSS.
 
@@ -70,7 +70,7 @@ Traditional CSS will be used to replicate the visual style of late-1990s computi
 | Node.js | Runtime environment for local development and Astro deployment |
 | Express | Included as a contingency for additional backend functionality if needed |
 
-#### Node.js
+#### 1. Node.js
 
 Node.js will provide the runtime environment for the backend of our local development and for the deployment of the Astro application. Moreover, it is also very compatible and is required by Astro.
 
@@ -78,7 +78,7 @@ Node.js will provide the runtime environment for the backend of our local develo
 - Compatibility with Astro, since it's required by Astro
 - Supports modern JavaScript tooling and is compatible with React (JSX)
 
-#### Express
+#### 2. Express
 
 Express will be used only if additional backend functionality becomes necessary. In addition, the majority of the team has experience in utilizing Express with Node.js.
 
