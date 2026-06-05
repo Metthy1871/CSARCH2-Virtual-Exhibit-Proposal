@@ -54,7 +54,7 @@ MDX will be used to create the main exhibit content page. It combines the introd
 Traditional CSS will be used to replicate the visual style of late-1990s computing environments. In addition, most of us have experience with using traditional CSS.
 
 **Planned design elements:**
-- Create a design with a 1980s technology theme (an early version of Windows) to replicate what the User Interface looked like at the time of the Y2K bug
+- Create a design with a 1990s technology theme (an early version of Windows) to replicate what the User Interface looked like at the time of the Y2K bug
 - CRT monitor design
 - Retro terminal interfaces
 - Warning screens for interactive simulation
