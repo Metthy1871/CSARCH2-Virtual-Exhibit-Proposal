@@ -243,10 +243,10 @@ Every choice consumes time.
 
 ### Mobile Display
 
-![Mobile Display 1](public/Screnshot_Mobile-Display_1.png)
-![Mobile Display 2](public/Screnshot_Mobile-Display_2.png)
-![Mobile Display 3](public/Screnshot_Mobile-Display_3.png)
-![Mobile Display 4](public/Screnshot_Mobile-Display_4.png)
+![Mobile Display 1](public/Mobile-Display1.png)
+![Mobile Display 1](public/Mobile-Display2.png)
+![Mobile Display 1](public/Mobile-Display3.png)
+![Mobile Display 1](public/Mobile-Display4.png)
 
 Mobile Optimizations:
 - Touch-friendly controls
