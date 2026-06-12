@@ -237,10 +237,10 @@ Every choice consumes time.
 
 ### PC Display
 
-![PC Display 1](public/Screnshot_PC-Display_1.png)
-![PC Display 2](public/Screnshot_PC-Display_2.png)
-![PC Display 3](public/Screnshot_PC-Display_3.png)
-![PC Display 4](public/Screnshot_PC-Display_4.png)
+![PC Display 1](public/PC-Display_1.png)
+![PC Display 2](public/PC-Display_2.png)
+![PC Display 3](public/PC-Display_3.png)
+![PC Display 4](public/PC-Display_4.png)
 
 ### Mobile Display
 
