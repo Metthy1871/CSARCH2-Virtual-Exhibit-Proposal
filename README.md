@@ -1,7 +1,7 @@
 # CSARCH2 Virtual Exhibit Proposal
 
-**Group Name:** Project Y2K  
-**Topic Theme:** The Y2K Bug in the 20th Century
+**Group Name:** Project Spectre  
+**Topic Theme:** Spectre and Meltdown Vulnerabilities (2018)
 <br>
 **GitHub Link:** https://github.com/Metthy1871/CSARCH2-Virtual-Exhibit-Proposal/blob/main/README.md
 
@@ -24,7 +24,7 @@
 | Astro 6 | Primary framework; required by the project template; handles museum page rendering |
 | React (JSX) | All interactive exhibit elements - simulations and educational games as reusable JSX components embedded via MDX |
 | MDX | Main exhibit content page; combines written content with embedded React components |
-| CSS | Styling; used to replicate the visual aesthetic of late-1990s computing environments |
+| CSS | Styling; used to replicate the visual appearance of a computer security operations center |
 
 #### 1. Astro 6
 
@@ -39,9 +39,10 @@ Astro will serve as the primary framework for our virtual exhibit. It is the req
 React will be used to develop all the interactive exhibit elements. The project's simulations and educational games will be implemented as reusable JSX components, displayed in the MDX file. In addition, most of us have experience with using React JSX.
 
 **Will be used for:**
-- Year Counter Simulator Component (Interactive Simulator)
-- Midnight Crisis Fix-It Game Component (Interactive Game)
-- Interactive Timeline Component (Interactive Timeline)
+- Password Leak Simulator Component (Interactive Simulation)
+- Patch the Memory Leak Game Component (Interactive Game)
+- Interactive Timeline Component
+- Quiz Components and Popups
 
 #### 3. MDX
 
@@ -53,15 +54,16 @@ MDX will be used to create the main exhibit content page. It combines the introd
 
 #### 4. CSS
 
-Traditional CSS will be used to replicate the visual style of late-1990s computing environments. In addition, most of us have experience with using traditional CSS.
+Traditional CSS will be used to replicate the visual appearance of a computer security operations center and modern processor monitoring tools.
 
 **Planned design elements:**
-- Create a design with a 1990s technology theme (an early version of Windows) to replicate what the User Interface looked like at the time of the Y2K bug
-- CRT monitor design
-- Retro terminal interfaces
-- Warning screens for interactive simulation
+- Hacker-themed cybersecurity interface
+- Terminal windows and command prompts
+- CPU monitoring dashboards
+- Cache visualization effects
+- Warning popups and security alerts
 - Responsive layouts for desktop and mobile devices
-- Animations throughout the webpage
+- Animations showing data leakage and memory access
 
 ---
 
@@ -85,8 +87,10 @@ Node.js will provide the runtime environment for the backend of our local develo
 Express will be used only if additional backend functionality becomes necessary. In addition, the majority of the team has experience in utilizing Express with Node.js.
 
 **Potential uses:**
-- Recording high scores for the interactive games
-- Tracking visitor statistics
+- Recording quiz scores
+- Tracking game completion statistics
+- Visitor analytics
+
 
 ---
 
@@ -94,82 +98,138 @@ Express will be used only if additional backend functionality becomes necessary.
 
 ### 1. Introduction (Story Hook)
 
-As the final seconds of 1999 ticked away, the world stood on the edge of a digital cliff, fearing that the technology powering modern civilization would fail the moment 2000 began. This fear became known as the Y2K crisis or the “Millennium Bug”. Y2K was caused by storing years with only two digits (storing 1999 as “99”). Moreover, many feared that computers interpreted “00” as 1900 instead of 2000. This simple problem threatened to crash the systems that controlled everything, such as bank accounts and electricity, which resulted in people losing money or power. Eventually, the Y2K crisis became a crucial lesson in the importance of preparing for technological risks before they develop into a global threat.
+In 2018, the digital world faced a nightmare when two security flaws were discovered in the physical chips of every computer and smartphone on Earth. These flaws are known as Spectre and Meltdown. Unlike typical viruses that can easily be deleted, there were “hardware vulnerabilities” that had existed for decades. The problem originated from a design choice to make devices faster by having chips predict the user's next action. However, this speed trick inadvertently left a backdoor for hackers to steal private information, such as passwords. Furthermore, this discovery caused a global panic because the flaw was built into the physical parts of the machines, making it nearly impossible to fix without slowing down computers everywhere. Ultimately, Spectre and Meltdown served as a powerful lesson that the rush for faster technology can create deep security risks that put the entire world’s privacy at stake.
 
 ### 2. Technical Explanation (CSARCH Core)
 
-#### a. 2-Digit Year Storage
+#### a. Speculative Execution
 
-In the early years of computing, storage was extremely expensive. Programmers stored years as only 2 digits to conserve space. COBOL, the dominant language of the era, reflected this in its data definitions via 6-digit date fields: `PIC 9(6)`.
+Modern processors attempt to improve performance by predicting future instructions and executing them ahead of time.
 
-#### b. Memory Limitations
+Example:
 
-The problem existed at the hardware level as well — not just in code. BIOS chips and Real-Time Clock (RTC) chips stored dates in a 2-digit BCD (Binary Coded Decimal) format.
+if (userIsAuthorized)
+   accessSecretData();
+   
+The CPU may temporarily execute the instruction before confirming whether the user is actually authorized.
+Normally these speculative operations are discarded. However, traces remain in the CPU cache.
 
-#### c. Ambiguity
+#### b. CPU Cache
 
-Since `"00"` was ambiguous, machines encountered problems because there was no proper definition for the year 2000.
+A cache is a small, high-speed memory area that stores frequently used data.
 
-```
-1999 → "99"
-2000 → "00"  ← interpreted as 1900
-```
+Accessing cached data is significantly faster than retrieving data from main memory.
 
-This caused three main failure modes:
+Attackers can measure timing differences to determine whether certain data was loaded into cache.
 
-1. **Negative arithmetic** — e.g., a person born in 1950 would be calculated as -50 years old
-2. **Wrong sort order** — data from 2000 onwards would appear *before* 1999 data (`"99" > "00"`)
-3. **Crashes** — some systems rejected `"00"` as invalid input entirely
+#### c. Meltdown
+
+Meltdown allows an attacker to read privileged kernel memory from an unprivileged application.
+
+It effectively breaks the isolation between:
+- User applications
+- Operating system memory
+
+Potentially exposed information:
+- Passwords
+- Encryption keys
+- Sensitive operating system data
+
+#### d. Spectre
+
+Spectre tricks programs into executing instructions they normally would not execute.
+
+Instead of directly bypassing permissions, it manipulates speculative execution behavior to leak data through cache timing.
+
+Potentially affected:
+- Browsers
+- Applications
+- Virtual machines
+- Cloud computing environments
+
 
 ### 3. Timeline (Visual Section)
 
 | Period | Event |
 |---|---|
-| 1970–1990 | Systems designed with 2-digit year shortcuts |
-| 1995–1999 | Public and industry panic begins |
-| 1999–2000 | Global remediation effort underway |
+| 1995–2017 | Speculative execution becomes a standard feature in modern CPUs |
+| Mid-2017 | Researchers privately discover Spectre and Meltdown |
+| 2018 | Major emergency patching efforts worldwide |
+| 2019 | CPU manufacturers redesign hardware to reduce future risksy |
 
 ---
 
 ## II. Interactive Components
 
-### 1. Simulation — "The Year Counter: Stop at 2000"
+### 1. Interactive Simulation – "The Hidden Password Leak"
 
-**Concept:** A system clock simulation counting years from 1990 → 2000.
+**Concept:** Demonstrates how sensitive data can remain hidden from the user interface but still be exposed through cache side-channel attacks.
 
 **Gameplay:**
-- The counter ticks forward: 1990, 1991, 1992 … 1998, 1999, 2000
-- The user can press a button at any time to pause it
-- If the counter reaches 2000 → crash animation plays, then resumes after any button press
-- After the crash, it loops back to 1990 and repeats
+
+The user sees:
+
+Password:
+************
+
+The system appears secure.
+
+A button labeled: "View as Attacker" switches perspectives.
+
+The attacker view displays a cache-monitoring panel.
+
+As the user triggers memory accesses, portions of the password gradually become visible:
+************
+P***********
+Pa**********
+Pas*********
+Pass********
+until the entire password is reconstructed.
 
 **What it teaches:**
-- The rollover bug threat
-- Integer overflow and misinterpretation
-- System failure as a consequence of data representation
-
+- Difference between displayed data and stored data
+- Cache side-channel attacks
+- Why Spectre and Meltdown were dangerous
+- Information leakage without directly reading memory
+  
 ---
 
-### 2. Game — "Midnight Crisis Fix-it"
+### 2. Interactive Game – "Patch the Memory Leak"
 
-**Concept:** You are a software engineer on December 31, 1999. Fix the systems before midnight.
+**Concept:** You are a cybersecurity engineer responding to the disclosure of Spectre and Meltdown. Your goal is to secure critical systems before attackers steal sensitive data.
 
 **Gameplay:**
-- Choose from a list of systems to patch, each costing "time":
-  - `[1]` Banking System
-  - `[2]` Airline Reservation System
+
+Players are given a set of vulnerable systems:
+  - `[1]` Banking Server
+  - `[2]` Cloud Database
   - `[3]` Hospital Records
-  - `[4]` Power Grid
-- A 12-minute real-time timer runs, displayed as 24 hours (2× speed): `23:58 → 23:59 → 00:00`
+  - `[4]` Government Portal
+  - `[5]` Web Browser
+  
+Each system requires a different patching effort.
+
+The player has limited time and resources.
+
+Possible actions:
+- Apply Operating System Patch
+- Install Browser Update
+- Enable Kernel Isolation
+- Ignore Risk
+- Deploy Security Monitoring
+  
+Every choice consumes time.
 
 **Outcome states:**
-- All systems fixed → **World is Stable** ending
-- Systems missed → **System Collapse Simulation**
+- Most critical systems patched→ **Secure Infrastructure** ending
+- Systems missed → **Partial Breach** ending
+- Critical systems ignored → **Major Security Incident** ending
 
 **What it teaches:**
-- Prioritization in system design
-- Real-world engineering constraints
-- Why the Y2K remediation effort cost billions
+- Real-world cybersecurity incident response
+- Resource prioritization
+- Importance of patch management
+- Why organizations spent significant resources mitigating Spectre and Meltdown
 
 ---
 
@@ -189,12 +249,11 @@ This caused three main failure modes:
 ![Mobile Display 3](public/Screnshot_Mobile-Display_3.png)
 ![Mobile Display 4](public/Screnshot_Mobile-Display_4.png)
 
-## IV. Planned JSX Components
+Mobile Optimizations:
+- Touch-friendly controls
+- Simplified CPU diagrams
+- Responsive timeline cards
+- Compact security dashboards
 
-| Component | Purpose |
-|---|---|
-| `Y2KTimeline.jsx` | Displays the visual timeline of Y2K events from 1970 through the global remediation effort |
-| `YearCounter.jsx` | Simulates the year rollover from 1990–2000 with crash animation and loop logic |
-| `CrisisManager.jsx` | Manages the Midnight Crisis Fix-It game, including the system selection, time cost, timer, and outcome states |
 
 
