@@ -1,7 +1,7 @@
 # CSARCH2 Virtual Exhibit Proposal
 
-**Group Name:** Project Spectre  
-**Topic Theme:** Spectre and Meltdown Vulnerabilities (2018)
+**Group Name:** *Project Spectre*
+**Topic Theme:** *Spectre and Meltdown Vulnerabilities (2018)*
 <br>
 **GitHub Link:** https://github.com/Metthy1871/CSARCH2-Virtual-Exhibit-Proposal/blob/main/README.md
 
@@ -96,13 +96,13 @@ Express will be used only if additional backend functionality becomes necessary.
 
 ## I. Proposed Structure
 
-### 1. Introduction (Story Hook)
+### 1. *Introduction (Story Hook)*
 
 In 2018, the digital world faced a nightmare when two security flaws were discovered in the physical chips of every computer and smartphone on Earth. These flaws are known as Spectre and Meltdown. Unlike typical viruses that can easily be deleted, there were “hardware vulnerabilities” that had existed for decades. The problem originated from a design choice to make devices faster by having chips predict the user's next action. However, this speed trick inadvertently left a backdoor for hackers to steal private information, such as passwords. Furthermore, this discovery caused a global panic because the flaw was built into the physical parts of the machines, making it nearly impossible to fix without slowing down computers everywhere. Ultimately, Spectre and Meltdown served as a powerful lesson that the rush for faster technology can create deep security risks that put the entire world’s privacy at stake.
 
 ### 2. Technical Explanation (CSARCH Core)
 
-#### a. Speculative Execution
+#### a. *Speculative Execution*
 
 Modern processors attempt to improve performance by predicting future instructions and executing them ahead of time.
 
@@ -114,7 +114,7 @@ if (userIsAuthorized)
 The CPU may temporarily execute the instruction before confirming whether the user is actually authorized.
 Normally these speculative operations are discarded. However, traces remain in the CPU cache.
 
-#### b. CPU Cache
+#### b. *CPU Cache*
 
 A cache is a small, high-speed memory area that stores frequently used data.
 
@@ -122,7 +122,7 @@ Accessing cached data is significantly faster than retrieving data from main mem
 
 Attackers can measure timing differences to determine whether certain data was loaded into cache.
 
-#### c. Meltdown
+#### c. *Meltdown*
 
 Meltdown allows an attacker to read privileged kernel memory from an unprivileged application.
 
@@ -135,7 +135,7 @@ Potentially exposed information:
 - Encryption keys
 - Sensitive operating system data
 
-#### d. Spectre
+#### d. *Spectre*
 
 Spectre tricks programs into executing instructions they normally would not execute.
 
@@ -148,7 +148,7 @@ Potentially affected:
 - Cloud computing environments
 
 
-### 3. Timeline (Visual Section)
+### 3. *Timeline (Visual Section)*
 
 | Period | Event |
 |---|---|
@@ -161,7 +161,7 @@ Potentially affected:
 
 ## II. Interactive Components
 
-### 1. Interactive Simulation – "The Hidden Password Leak"
+### 1. *Interactive Simulation – "The Hidden Password Leak"*
 
 **Concept:** Demonstrates how sensitive data can remain hidden from the user interface but still be exposed through cache side-channel attacks.
 
@@ -193,7 +193,7 @@ until the entire password is reconstructed.
   
 ---
 
-### 2. Interactive Game – "Patch the Memory Leak"
+### 2. *Interactive Game – "Patch the Memory Leak"*
 
 **Concept:** You are a cybersecurity engineer responding to the disclosure of Spectre and Meltdown. Your goal is to secure critical systems before attackers steal sensitive data.
 
@@ -232,7 +232,7 @@ Every choice consumes time.
 
 ---
 
-## III. Proposed Design Layout
+## III. *Proposed Design Layout*
 
 ### PC Display
 
