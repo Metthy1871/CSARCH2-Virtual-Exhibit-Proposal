@@ -178,7 +178,6 @@ A button labeled: "View as Attacker" switches perspectives.
 The attacker view displays a cache-monitoring panel.
 
 As the user triggers memory accesses, portions of the password gradually become visible:
-- ************
 - P***********
 - Pa**********
 - Pas*********
